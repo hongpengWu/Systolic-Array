@@ -176,6 +176,7 @@ This project is simulator‑agnostic and should work with any modern **SystemVer
 3. **Run**
    - Set the simulator's working directory to the project root so that paths like `tb/data/memA.hex` resolve.
    - Run until the testbench finishes; it will print `[TB] PASS` or `[TB] FAIL` and any mismatches.
+   - For Vivado XSIM batch reproduction, see `docs/VIVADO_XSIM.md`.
 
 4. **Inspect results** (optional)
    - Dump waveforms (e.g., VCD/FSDB) if desired.
@@ -212,5 +213,6 @@ Some extensions and TODOs:
   - `gen_test_data.py`: Generates test matrices, instruction stream, and golden output; writes hex files to `tb/data/`.
 - **`docs/`** — Documentation
   - `RUN_WALKTHROUGH.md`: End-to-end run description with a concrete matrix example and file/line references.
+  - `VIVADO_XSIM.md`: Vivado XSIM reproduction guide, version notes, and batch simulation flow.
 
 ---

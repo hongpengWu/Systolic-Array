@@ -77,25 +77,18 @@ module systolic_array #(
     assign sa_out_data = acc_grid[out_row][out_col];
 
     // ------------------------------------------------------------------------
-    // Drive west and north edges: row r gets sa_in_a[r], col c gets sa_in_b[c]
+    // Drive only the west and north edges from the controller.
+    // Internal mesh links are driven exclusively by neighboring PEs.
     // ------------------------------------------------------------------------
-    integer r, c;
-    always_comb begin
-        // Default all buses to zero
-        for (r = 0; r < N; r++) begin
-            for (c = 0; c <= N; c++) begin
-                a_bus[r][c] = '0;
-            end
+    genvar edge_r, edge_c;
+    generate
+        for (edge_r = 0; edge_r < N; edge_r++) begin : WEST_EDGE
+            assign a_bus[edge_r][0] = sa_in_a[edge_r];
         end
-        for (r = 0; r <= N; r++) begin
-            for (c = 0; c < N; c++) begin
-                b_bus[r][c] = '0;
-            end
+        for (edge_c = 0; edge_c < N; edge_c++) begin : NORTH_EDGE
+            assign b_bus[0][edge_c] = sa_in_b[edge_c];
         end
-        // True NxN feed: west edge of row r, north edge of col c
-        for (r = 0; r < N; r++) a_bus[r][0] = sa_in_a[r];
-        for (c = 0; c < N; c++) b_bus[0][c] = sa_in_b[c];
-    end
+    endgenerate
 
     // ------------------------------------------------------------------------
     // Instantiate N x N PE grid and connect buses

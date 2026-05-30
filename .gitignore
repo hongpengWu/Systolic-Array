@@ -13,3 +13,9 @@ __pycache__/
 *.swp
 *~
 .DS_Store
+
+# Vivado batch logs
+vivado.jou
+vivado.log
+vivado_*.backup.jou
+vivado_*.backup.log
