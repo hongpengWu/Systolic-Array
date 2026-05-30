@@ -1,0 +1,30 @@
+Vivado v2024.2 reproduction log excerpt
+======================================
+
+Command:
+  vivado -mode batch -source vivado/run_xsim.tcl
+
+Environment:
+  Vivado: 2024.2
+  Python env: py38env
+
+Relevant output:
+
+INFO: Repo root = C:/Users/lenovo/Desktop/trae_tmp/Systolic-Array
+INFO: Running xvlog...
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/lenovo/Desktop/trae_tmp/Systolic-Array/rtl/top.sv" into library work
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/lenovo/Desktop/trae_tmp/Systolic-Array/rtl/controller.sv" into library work
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/lenovo/Desktop/trae_tmp/Systolic-Array/rtl/systolic_array.sv" into library work
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/lenovo/Desktop/trae_tmp/Systolic-Array/rtl/pe.sv" into library work
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/lenovo/Desktop/trae_tmp/Systolic-Array/tb/tb_top.sv" into library work
+INFO: Running xelab...
+Built simulation snapshot tb_top_sim
+INFO: Running xsim...
+Time resolution is 1 ps
+run -all
+[TB] ap_done asserted.
+[TB] PASS: All 16 outputs match golden.
+$finish called at time : 1135 ns : File "C:/Users/lenovo/Desktop/trae_tmp/Systolic-Array/tb/tb_top.sv" Line 177
+
+Result:
+  Reproduction succeeded on Vivado 2024.2.

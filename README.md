@@ -214,5 +214,6 @@ Some extensions and TODOs:
 - **`docs/`** — Documentation
   - `RUN_WALKTHROUGH.md`: End-to-end run description with a concrete matrix example and file/line references.
   - `VIVADO_XSIM.md`: Vivado XSIM reproduction guide, version notes, and batch simulation flow.
+  - `VIVADO_XSIM_2024_2_PASS.log`: Checked-in log excerpt showing a successful Vivado 2024.2 reproduction.
 
 ---

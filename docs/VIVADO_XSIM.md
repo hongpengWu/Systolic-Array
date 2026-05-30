@@ -10,12 +10,16 @@ No `.xdc`, IP core, block design, or synthesis project is required for functiona
 - **Vivado version used for reproduction**: `2024.2`
 - **Python environment used for data generation**: `py38env`
 - **Simulation result**: `[TB] PASS: All 16 outputs match golden.`
+- **Checked-in verification log**: `docs/VIVADO_XSIM_2024_2_PASS.log`
 
 The verified result is produced by:
 
 1. Generating `tb/data/*.hex` with `scripts/gen_test_data.py`
 2. Running `vivado/run_xsim.tcl`
 3. Checking `build/xsim/xsim.log` for `[TB] PASS`
+
+A checked-in verification excerpt is also provided in
+`docs/VIVADO_XSIM_2024_2_PASS.log` so the successful reproduction result is preserved in the repository without committing the full generated simulator output.
 
 ---
 
@@ -142,3 +146,4 @@ These details are already handled by `vivado/run_xsim.tcl`.
 - `tb/tb_top.sv` — Testbench entry point
 - `scripts/gen_test_data.py` — Generates input matrices and golden output
 - `docs/RUN_WALKTHROUGH.md` — Step-by-step dataflow explanation
+- `docs/VIVADO_XSIM_2024_2_PASS.log` — Checked-in reproduction log excerpt with PASS result
